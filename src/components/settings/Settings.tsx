@@ -151,34 +151,6 @@ export default function Settings() {
               components={{ Option: CustomOption }}
             />
           </Label>
-          <Label text="search bar">
-            <div className="flex items-center">
-              <input
-                type="checkbox"
-                checked={settings.showSearch}
-                onChange={(e) => updateSettings({ showSearch: e.target.checked })}
-                className="form-checkbox h-4 w-4 text-white rounded border-neutral-400 bg-transparent"
-              />
-              <span className="ml-2 text-xs">Show search bar</span>
-            </div>
-          </Label>
-          {settings.showSearch && (
-            <Label text="search provider">
-              <Select
-                defaultValue={{
-                  value: settings.searchProvider,
-                  label: settings.searchProvider,
-                }}
-                onChange={(option) => option && updateSearchProvider(option.value)}
-                className="w-full rounded text-black text-xs font-apple2mono"
-                options={Object.keys(searchProviders).map((provider) => ({
-                  value: provider,
-                  label: provider,
-                }))}
-                isSearchable={false}
-              />
-            </Label>
-          )}
 
           <div className="block text-neutral-300 text-xs font-apple2mono mt-4">
             <span>hints:</span>
